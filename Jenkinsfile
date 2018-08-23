@@ -1,13 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3-alpine'
+      args '-v $HOME/.m2:/root/.m2'
+    }
+  }
   stages {
-    stage('Example') {
+    stage('Build') {
       steps {
-        echo "${params.Greeting} World!"
+        sh 'mvn -B'
       }
     }
   }
-  parameters {
-    string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-  }
-}
+  
