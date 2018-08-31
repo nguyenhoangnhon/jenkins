@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage ('Init') {
+    stage('Init') {
       steps {
         sh '''
           echo "PATH = ${PATH}"
@@ -9,11 +9,10 @@ pipeline {
           '''
       }
     }
-    stage ('Build') {
+    stage('Build') {
       steps {
         echo 'Hello World!'
       }
     }
   }
 }
-
