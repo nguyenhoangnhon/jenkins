@@ -1,21 +1,14 @@
-pipeline {
-  agent any
-  stages {
-    stage('Init') {
-      steps {
-        sh '''
-          echo "PATH = ${PATH}"
-          echo "M2_HOME = ${M2_HOME}"
-          '''
-      }
-    }
-    stage('Build') {
-      steps {
-        echo 'Hello World!'
-      }
-    }
-  }
-  environment {
-    ten = 'nhon'
-  }
+node {
+	stage('Checkout') {
+		checkout scm
+	}
+	stage('Build') {
+		echo 'Building...'
+	}
+	stage('Test') {
+		echo 'Test...'
+	}
+	stage('Deploy') {
+		echo 'Deploying'
+	}
 }
