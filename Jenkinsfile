@@ -1,13 +1,18 @@
 pipeline {
-  agent {
-    dockerfile true
-  }
+  agent any
   stages {
-    stage('Test') {
+    stage('Init') {
       steps {
-        sh 'node --version'
-        sh 'svn --version'
+        sh '''
+          echo "PATH = ${PATH}"
+          echo "M2_HOME = ${M2_HOME}"
+         '''
       }
+    }
+    stage ('Build') {
+       step {
+         echo 'Hello World!'
+       }
     }
   }
 }
