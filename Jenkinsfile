@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        jobname = 'env.JOB_NAME'
+        jobname = ${env.JOB_NAME}
     }
     
     stages {
