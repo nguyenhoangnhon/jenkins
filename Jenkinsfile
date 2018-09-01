@@ -1,6 +1,8 @@
 node {
     stage('Build') {
-        sh 'cd /home/servertest'
-        sh 'ls'
+        node('linux') {
+            sh 'cd /home/servertest'
+            sh 'ls'
+        }
     }
 }
