@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'cd /home/servertest'
                 sh 'ls'
-                sh 'echo ${env.JOB_NAME}
+                sh 'echo ${env.JOB_NAME}'
             }
         }
     }
