@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        jobname = 'env.JOB_NAME'
+    
     stages {
         stage('Clone') {
             steps {
@@ -10,7 +13,7 @@ pipeline {
             steps {
                 sh 'cd /home/servertest'
                 sh 'ls'
-                sh 'echo ${env.JOB_NAME}'
+                sh 'printenv'
             }
         }
     }
