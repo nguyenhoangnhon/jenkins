@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         jobname = 'env.JOB_NAME'
+    }
     
     stages {
         stage('Clone') {
